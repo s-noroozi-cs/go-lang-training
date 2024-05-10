@@ -7,4 +7,4 @@ fmt: clean
 vet: fmt
 	go vet ./...
 build: vet
-	go build
+	go build -o hello

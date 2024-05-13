@@ -23,4 +23,10 @@ func main() {
 	bi++
 
 	fmt.Println(b, si, bi)
+
+	var x string = "Hello"
+	var y int = 15
+
+	fmt.Printf("x has value: %v and type: %T\n", x, x)
+	fmt.Printf("y has value: %v and type: %T", y, y)
 }

@@ -110,7 +110,7 @@ func sampleH() {
 		fmt.Printf("%v : %v, ", k, v)
 	}
 
-	fmt.Println()
+	fmt.Println("")
 
 	for _, element := range b { // loop with the defined order
 		fmt.Printf("%v : %v, ", element, a[element])

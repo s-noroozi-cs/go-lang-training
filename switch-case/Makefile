@@ -1,8 +1,8 @@
 .DEFAULT_GOAL := run
 
 clean:
+	reset
 	go clean
-
 fmt: clean
 	go fmt ./...
 

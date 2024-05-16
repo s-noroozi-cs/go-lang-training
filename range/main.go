@@ -26,5 +26,4 @@ func main() {
 	for k, v := range kv {
 		fmt.Printf("key: %v, value: %v\n", k, v)
 	}
-
 }

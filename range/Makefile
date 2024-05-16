@@ -7,5 +7,5 @@ fmt: clean
 vet: fmt
 	go vet ./...
 run: vet
-	reset
+	clear
 	go run main.go

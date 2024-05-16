@@ -4,6 +4,15 @@ import (
 	"fmt"
 )
 
+func sum(nums ...int) {
+	fmt.Print(nums, " ")
+	total := 0
+	for _, v := range nums {
+		total += v
+	}
+	fmt.Println(total)
+}
+
 func add(a int, b int) int {
 	return a + b
 }
@@ -30,4 +39,10 @@ func main() {
 
 	x := 10
 	fmt.Printf("factorial %v is %v\n", x, fact(x))
+
+	sum(1, 2)
+	sum(1, 2, 3)
+
+	nums := []int{1, 2, 3, 4}
+	sum(nums...)
 }

@@ -45,4 +45,16 @@ func main() {
 
 	nums := []int{1, 2, 3, 4}
 	sum(nums...)
+
+	var fib func(n int) int
+
+	fib = func(n int) int {
+		if n < 2 {
+			return n
+		} else {
+			return fib(n-1) + fib(n-2)
+		}
+	}
+
+	fmt.Printf("fib 10: %v\n", fib(10))
 }

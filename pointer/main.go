@@ -4,12 +4,14 @@ import (
 	"fmt"
 )
 
-func setZeroByVal(number int) {
-	number = 0
+func setZeroByVal(iVal int) {
+	iVal = 0
+	fmt.Printf("inside setZeroByVal func, ival: %v, type: %T\n", iVal, iVal)
 }
 
-func setZeroByRef(number *int) {
-	*number = 0
+func setZeroByRef(iPointer *int) {
+	*iPointer = 0
+	fmt.Printf("inside setZeroByRef func, ival: %v, type: %T\n", iPointer, iPointer)
 }
 
 func main() {
@@ -17,10 +19,18 @@ func main() {
 
 	fmt.Printf("number: %v\n", number)
 
+	fmt.Println("---------------------------")
+
 	setZeroByVal(number)
 	fmt.Printf("call set zero by val, number: %v\n", number)
 
+	fmt.Println("---------------------------")
+
 	setZeroByRef(&number)
 	fmt.Printf("call set zero by ref, number: %v\n", number)
+
+	fmt.Println("---------------------------")
+
+	fmt.Println("pointer:", &number)
 
 }

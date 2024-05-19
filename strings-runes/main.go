@@ -30,12 +30,15 @@ func print(str string) {
 	for i, w := 0, 0; i < len(str); i += w {
 		runeValue, width := utf8.DecodeRuneInString(str[i:])
 		w = width
-		if runeValue == 'H' {
-			fmt.Println("Found H")
-		} else if runeValue == 'و' {
-			fmt.Println("Found و")
-		}
+		findRune(runeValue)
+	}
+}
 
+func findRune(runeValue rune) {
+	if runeValue == 'H' {
+		fmt.Println("Found H")
+	} else if runeValue == 'و' {
+		fmt.Println("Found و")
 	}
 }
 

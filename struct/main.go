@@ -23,4 +23,13 @@ func main() {
 	person.salary = 2_000
 
 	printPerson(person)
+
+	animal := struct {
+		name     string
+		isMammal bool
+	}{
+		"Rex",
+		true,
+	}
+	fmt.Printf("animal name:%v, isMammal:%v\n", animal.name, animal.isMammal)
 }

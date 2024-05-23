@@ -1,10 +1,13 @@
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := run
 
-fmt: 
+clean:
+	go clean
+fmt: clean
 	go fmt ./...
 
 vet: fmt
 	go vet ./...
 
-build: vet
-	go build
+run: vet
+	clear
+	go run main.go

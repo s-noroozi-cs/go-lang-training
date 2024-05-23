@@ -1,8 +1,17 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"os"
 )
+
+func divAndRemainder(num, denom int) (int, int, error) {
+	if denom == 0 {
+		return 0, 0, errors.New("Can't divid by zero")
+	}
+	return num / denom, num % denom, nil
+}
 
 func sum(nums ...int) {
 	fmt.Print(nums, " ")
@@ -57,4 +66,21 @@ func main() {
 	}
 
 	fmt.Printf("fib 10: %v\n", fib(10))
+
+	result, remainder, error := divAndRemainder(5, 3)
+	if error != nil {
+		fmt.Println(error)
+		os.Exit(1)
+	} else {
+		fmt.Printf("5, 3 --> div: %v, rem: %v\n", result, remainder)
+	}
+
+	result, remainder, error = divAndRemainder(5, 0)
+	if error != nil {
+		fmt.Println(error)
+		os.Exit(1)
+	} else {
+		fmt.Printf("5, 0 --> div: %v, rem: %v\n", result, remainder)
+	}
+
 }

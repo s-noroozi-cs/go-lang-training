@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 )
 
@@ -33,4 +34,14 @@ func main() {
 
 	fmt.Println("pointer:", &number)
 
+	fmt.Println("---------------------------")
+
+	f := struct {
+		Name string `json:"name"`
+		Age  int    `json:"age"`
+	}{}
+	err := json.Unmarshal([]byte(`{"name": "Bob", "age": 30}`), &f)
+	if err == nil {
+		fmt.Println("name: ", f.Name, ", age: ", f.Age)
+	}
 }

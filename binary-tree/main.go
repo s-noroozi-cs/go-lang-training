@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type IntTree struct {
 	val         int
@@ -36,5 +34,13 @@ func (it *IntTree) Contains(val int) bool {
 }
 
 func main() {
-	fmt.Println("ok")
+	var it *IntTree
+	it = it.Insert(5)
+	it = it.Insert(3)
+	it = it.Insert(10)
+	it = it.Insert(2)
+
+	for _, item := range []int{2, 15} {
+		fmt.Printf("contain %d: %v\n", item, it.Contains(item))
+	}
 }

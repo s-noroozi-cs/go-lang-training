@@ -36,7 +36,12 @@ func main() {
 	intStack.Push(10)
 	intStack.Push(20)
 	intStack.Push(30)
+
+	fmt.Println("stack content: ", intStack)
+
 	v, _ := intStack.Pop()
 	fmt.Println("top element: ", v)
+	fmt.Println("containt 10: ", intStack.Contains(10))
+	fmt.Println("containt 5: ", intStack.Contains(5))
 
 }

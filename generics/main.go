@@ -33,6 +33,7 @@ func (s Stack[T]) Contains(val T) bool {
 
 func main() {
 	var intStack Stack[int]
+
 	intStack.Push(10)
 	intStack.Push(20)
 	intStack.Push(30)
@@ -41,6 +42,7 @@ func main() {
 
 	v, _ := intStack.Pop()
 	fmt.Println("top element: ", v)
+
 	fmt.Println("containt 10: ", intStack.Contains(10))
 	fmt.Println("containt 5: ", intStack.Contains(5))
 

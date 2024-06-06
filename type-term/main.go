@@ -6,7 +6,7 @@ import (
 )
 
 type Integer interface {
-	int | int8 | int16 | int32 | int64 |
+	~int | int8 | int16 | int32 | int64 |
 		uint | uint8 | uint16 | uint32 | uint64 |
 		uintptr
 }
@@ -36,5 +36,8 @@ func main() {
 	divAndRemainder(int8(10), int8(4))
 
 	divAndRemainder(uint(10), uint(4))
+
+	type MyInt int
+	divAndRemainder(MyInt(10), MyInt(4))
 
 }

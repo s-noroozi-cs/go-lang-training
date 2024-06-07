@@ -57,6 +57,23 @@ func (n *Node[T]) Contains(f OrderableFunc[T], v T) bool {
 	return true
 }
 
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf("Name: %s, Age: %d", p.Name, p.Age)
+}
+
+func (p Person) Order(other Person) int {
+	out := cmp.Compare(p.Name, other.Name)
+	if out == 0 {
+		out = cmp.Compare(p.Age, other.Age)
+	}
+	return out
+}
+
 func main() {
 	tree := NewTree(cmp.Compare[int])
 
@@ -73,4 +90,19 @@ func main() {
 
 	fmt.Println("-------------------------------------------")
 
+	personTree := NewTree(Person.Order)
+	saeid := Person{"Saeid", 37}
+	reza := Person{"Reza", 40}
+	davood := Person{"Davood", 43}
+
+	for _, item := range []Person{saeid, reza, davood} {
+		fmt.Printf("Adding new person %v to tree\n", item)
+		personTree.Add(item)
+	}
+
+	fmt.Println("-------------------------------------------")
+
+	for _, item := range []Person{saeid, {"Dadash", 58}} {
+		fmt.Printf("Person Tree contain %v: %v\n", item, personTree.Contains(item))
+	}
 }
